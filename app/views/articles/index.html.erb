@@ -3,14 +3,17 @@
 <table>
     <thead>
         <tr>
+            <td>ID</td>
             <td>Title</td>
             <td>Text</td>
         </tr>
     </thead>
 <% @articles.each do |article| %>
     <tr>
+        <td><%= article.id %></td>
         <td><%= link_to article.title, article_path(article) %></td>
         <td><%= article.text %></td>
+        <td><%= link_to 'edit', edit_article_path(article) %></td>
     </tr>
 <% end %>
 </table>
